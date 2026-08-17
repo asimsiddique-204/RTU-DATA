@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlRoot" data-theme="clean-minimal">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTU Operational Status Dashboard</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chart.js Datalabels Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <!-- SheetJS for Excel Parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <!-- html2canvas for Clean Snapshot PDF Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- jsPDF for Landscape PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        themeBg: 'var(--bg-color)',
+                        themeCard: 'var(--card-bg)',
+                        themeText: 'var(--text-color)',
+                        themeBorder: 'var(--border-color)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Theme Palette Definitions & Flashing Animations -->
+    <style>
+        :root, [data-theme="clean-minimal"] {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #0f172a;
+            --border-color: #e2e8f0;
+        }
+        [data-theme="white-elegant"] {
+            --bg-color: #ffffff;
+            --card-bg: #f8fafc;
+            --text-color: #0f172a;
+            --border-color: #cbd5e1;
+        }
+        [data-theme="dark"] {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f1f5f9;
+            --border-color: #334155;
+        }
+        [data-theme="navy"] {
+            --bg-color: #0a192f;
+            --card-bg: #172a45;
+            --text-color: #e6f1ff;
+            --border-color: #303c55;
+        }
+        [data-theme="nordic"] {
+            --bg-color: #f1f5f9;
+            --card-bg: #e2e8f0;
+            --text-color: #0f172a;
+            --border-color: #cbd5e1;
+        }
+        [data-theme="charcoal"] {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --border-color: #3f3f46;
+        }
+
+        /* Hover slide panels */
+        #sideMetaPanel:hover { transform: translateX(0) !important; }
+        #sideThemeSwitcher:hover { transform: translateX(0) !important; }
+
+        @keyframes flashRed {
+            0%, 100% { border-color: rgba(239, 68, 68, 0.5); box-shadow: 0 0 8px rgba(239, 68, 68, 0.2); }
+            50% { border-color: rgba(239, 68, 68, 0.15); box-shadow: 0 0 2px rgba(239, 68, 68, 0.05); }
+        }
+        @keyframes flashPurple {
+            0%, 100% { border-color: rgba(168, 85, 247, 0.5); box-shadow: 0 0 8px rgba(168, 85, 247, 0.2); }
+            50% { border-color: rgba(168, 85, 247, 0.15); box-shadow: 0 0 2px rgba(168, 85, 247, 0.05); }
+        }
+        @keyframes flashEmerald {
+            0%, 100% { border-color: rgba(16, 185, 129, 0.5); box-shadow: 0 0 8px rgba(16, 185, 129, 0.2); }
+            50% { border-color: rgba(16, 185, 129, 0.15); box-shadow: 0 0 2px rgba(16, 185, 129, 0.05); }
+        }
+        @keyframes rainbowFlash {
+            0% { background-color: #ef4444; box-shadow: 0 0 8px #ef4444; }
+            20% { background-color: #f59e0b; box-shadow: 0 0 8px #f59e0b; }
+            40% { background-color: #10b981; box-shadow: 0 0 8px #10b981; }
+            60% { background-color: #3b82f6; box-shadow: 0 0 8px #3b82f6; }
+            80% { background-color: #a855f7; box-shadow: 0 0 8px #a855f7; }
+            100% { background-color: #ef4444; box-shadow: 0 0 8px #ef4444; }
+        }
+
+        .rainbow-dot {
+            animation: rainbowFlash 3s infinite linear;
+        }
+
+        .flashing-reporting {
+            animation: flashEmerald 2.2s infinite ease-in-out;
+            border-width: 1px !important;
+        }
+        .flashing-not-reporting {
+            animation: flashRed 1.8s infinite ease-in-out;
+            border-width: 1px !important;
+        }
+        .flashing-intermittent {
+            animation: flashPurple 2s infinite ease-in-out;
+            border-width: 1px !important;
+        }
+
+        @keyframes slowSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-slow-spin {
+            animation: slowSpin 8s linear infinite;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        @media print {
+            body { background: white !important; color: black !important; font-size: 9px !important; }
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen p-6 relative">
+
+    <!-- LEFT-SIDE HOVER METADATA & ADMIN PANEL -->
+    <div id="sideMetaPanel" class="fixed left-0 top-20 z-50 no-print flex items-center transition-transform duration-300 -translate-x-64 shadow-2xl">
+        <div class="bg-[var(--card-bg)] border-r border-y border-[var(--border-color)] p-4 rounded-r-2xl w-64 shadow-2xl space-y-3">
+            <div class="flex justify-between items-center border-b border-[var(--border-color)] pb-2">
+                <h5 class="text-xs font-black uppercase tracking-wider text-blue-500">Portal & Admin Info</h5>
+                <span class="text-[10px] opacity-75">Hover to View</span>
+            </div>
+            
+            <div class="space-y-2 text-xs">
+                <div>
+                    <span class="text-[10px] uppercase opacity-75 font-bold block">Prepared By:</span>
+                    <strong class="text-sm">Asim Siddique</strong>
+                </div>
+                <div>
+                    <span class="text-[10px] uppercase opacity-75 font-bold block">Designation:</span>
+                    <span>Sr. Manager (Electrical)</span>
+                </div>
+                <div>
+                    <span class="text-[10px] uppercase opacity-75 font-bold block">Office Address:</span>
+                    <span class="leading-tight block">Telecom Control Room, NPCC Islamabad</span>
+                </div>
+                <div class="pt-2 border-t border-[var(--border-color)]">
+                    <span class="text-[10px] uppercase opacity-75 font-bold block">Portal Usage Summary:</span>
+                    <p class="text-[11px] opacity-90 leading-relaxed">
+                        Real-time telemetry tracking, daily log auditing, and historical trend analysis for national power grid RTU stations.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-blue-600 text-white p-3 rounded-r-xl shadow-2xl flex flex-col items-center justify-center gap-1 cursor-pointer">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            <span class="text-[9px] font-black tracking-widest uppercase [writing-mode:vertical-lr]">ADMIN INFO</span>
+        </div>
+    </div>
+
+    <!-- RIGHT-SIDE HOVER THEME SWITCHER -->
+    <div id="sideThemeSwitcher" class="fixed right-0 top-20 z-50 no-print flex items-center transition-transform duration-300 translate-x-36 shadow-2xl">
+        <div class="bg-purple-600 text-white p-3 rounded-l-xl shadow-2xl flex flex-col items-center justify-center gap-1 cursor-pointer">
+            <svg class="w-5 h-5 animate-slow-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            <span class="text-[9px] font-black tracking-widest uppercase [writing-mode:vertical-lr]">THEMES</span>
+        </div>
+
+        <div class="bg-[var(--card-bg)] border-l border-y border-[var(--border-color)] p-3 rounded-l-2xl w-36 shadow-2xl space-y-1.5">
+            <h5 class="text-[10px] font-extrabold uppercase tracking-widest opacity-75 mb-1.5 border-b border-[var(--border-color)] pb-1">Select Theme</h5>
+            
+            <div class="space-y-1 text-xs font-semibold">
+                <button onclick="changeTheme('clean-minimal')" class="w-full text-left px-2 py-1 rounded bg-slate-100 text-slate-900 border border-slate-300 flex justify-between">Netlify Clean <span>🌐</span></button>
+                <button onclick="changeTheme('white-elegant')" class="w-full text-left px-2 py-1 rounded bg-white text-slate-900 border border-slate-300 flex justify-between">White <span>⚪</span></button>
+                <button onclick="changeTheme('dark')" class="w-full text-left px-2 py-1 rounded bg-slate-800 text-slate-100 border border-slate-700 flex justify-between">Default <span>🌙</span></button>
+                <button onclick="changeTheme('navy')" class="w-full text-left px-2 py-1 rounded bg-blue-950 text-blue-100 flex justify-between">Navy <span>💼</span></button>
+                <button onclick="changeTheme('nordic')" class="w-full text-left px-2 py-1 rounded bg-slate-200 text-slate-900 border border-slate-300 flex justify-between">Nordic <span>❄️</span></button>
+                <button onclick="changeTheme('charcoal')" class="w-full text-left px-2 py-1 rounded bg-neutral-900 text-neutral-300 border border-neutral-700 flex justify-between">Charcoal <span>🖤</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto space-y-6 main-dashboard-container">
+        
+        <!-- Top Main Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-themeBorder pb-5 no-print">
+            <div>
+                <h1 class="text-2xl font-bold tracking-tight flex items-center gap-2">
+                    <svg class="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 012 2h2a2 2 0 012-2z"></path></svg>
+                    RTU Operational Status Dashboard
+                </h1>
+                <p class="text-xs opacity-75 mt-1">Sr. Manager (Electrical) Telecom Control Room NPCC Islamabad</p>
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-3">
+                <!-- Date Selector -->
+                <div class="flex items-center gap-2 bg-card-bg border border-themeBorder px-3 py-2 rounded-lg shadow-sm">
+                    <span class="text-xs font-bold uppercase tracking-wider opacity-75">Date:</span>
+                    <select id="dateSelect" onchange="handleDateChange()" class="bg-themeBg font-bold text-xs focus:outline-none border border-themeBorder rounded px-2 py-1 cursor-pointer">
+                    </select>
+                </div>
+
+                <!-- Reset Filters Button -->
+                <button onclick="clearAllFilters()" class="bg-card-bg hover:opacity-80 border border-themeBorder px-3 py-2.5 rounded-lg font-medium text-xs flex items-center gap-1.5 transition-all">
+                    Reset Filters
+                </button>
+
+                <!-- Print Summary PDF (Clean Snapshot Landscape One-Page) -->
+                <button onclick="printSummarySnapshotPDF()" class="bg-purple-600 hover:bg-purple-500 text-white px-3 py-2.5 rounded-lg font-medium text-xs flex items-center gap-1.5 transition-all shadow-lg active:scale-95">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    Print Summary PDF
+                </button>
+
+                <!-- Excel File Upload Button -->
+                <label class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-2.5 rounded-lg font-medium text-xs flex items-center gap-1.5 cursor-pointer transition-all shadow-lg active:scale-95">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                    Upload Excel
+                    <input type="file" id="excelFileInput" accept=".xlsx, .xls, .csv" class="hidden" onchange="handleExcelUpload(event)">
+                </label>
+
+                <!-- Reset DB Button -->
+                <button onclick="clearSavedData()" class="bg-card-bg hover:bg-rose-900/40 text-rose-400 border border-rose-500/30 px-3 py-2.5 rounded-lg font-medium text-xs transition-all">
+                    Reset DB
+                </button>
+            </div>
+        </div>
+
+        <!-- CAPTURE WRAPPER FOR PERFECT SNAPSHOT PDF -->
+        <div id="pdfCaptureArea" class="space-y-6 bg-[var(--bg-color)] p-2">
+            
+            <!-- PDF Header info shown only during generation or view -->
+            <div id="pdfHeaderBanner" class="hidden text-center border-b border-slate-300 pb-3 mb-2">
+                <h1 class="text-lg font-black text-black uppercase tracking-wide">RTU Operational Status Summary Report</h1>
+                <p class="text-xs font-semibold text-slate-800">National Power Control Center (NPCC) — Office of the Sr. Manager (Electrical) Islamabad</p>
+                <p id="pdfReportDate" class="text-[10px] text-slate-600 font-medium mt-1"></p>
+            </div>
+
+            <!-- SUMMARY KPIS (Strict sequence: Total RTU (left-most), Reporting, Intermittent, Not Reporting, Pending, Not Connected, Availability) -->
+            <div id="summarySection" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
+                
+                <!-- 1. TOTAL RTU BOX (First Left-Most) -->
+                <div onclick="clearAllFilters()" id="boxTotal" class="bg-[var(--card-bg)] border border-[var(--border-color)]/60 p-4 rounded-xl shadow-sm cursor-pointer hover:border-black transition-all flex flex-col justify-between">
+                    <div class="text-[11px] font-bold uppercase tracking-wider text-black dark:text-black mb-1">Total RTU</div>
+                    <div>
+                        <div class="text-3xl font-black text-black dark:text-black" id="kpiTotal">0</div>
+                        <div class="text-[11px] text-black dark:text-black mt-1 font-bold">Active Fleet</div>
+                    </div>
+                </div>
+
+                <!-- 2. REPORTING BOX -->
+                <div onclick="filterByBox('Reporting')" id="boxReporting" class="bg-[var(--card-bg)] border border-[var(--border-color)]/60 p-4 rounded-xl shadow-sm cursor-pointer flashing-reporting transition-all flex flex-col justify-between">
+                    <div class="text-xs font-black uppercase tracking-wider text-emerald-500 mb-1 flex items-center justify-between">
+                        <span>Reporting</span>
+                        <span class="relative flex h-3.5 w-3.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
+                        </span>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-emerald-500 tracking-tight" id="kpiReporting">0</div>
+                        <div class="text-xs text-emerald-500 font-extrabold mt-1.5" id="kpiReportingPct">0% of Total</div>
+                    </div>
+                </div>
+
+                <!-- 3. INTERMITTENT BOX -->
+                <div onclick="filterByBox('Intermittent')" id="boxIntermittent" class="bg-[var(--card-bg)] border border-[var(--border-color)]/60 p-4 rounded-xl shadow-sm cursor-pointer flashing-intermittent transition-all flex flex-col justify-between">
+                    <div class="text-xs font-black uppercase tracking-wider text-purple-500 mb-1 flex items-center justify-between">
+                        <span>Intermittent</span>
+                        <span class="relative flex h-3.5 w-3.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-purple-500"></span>
+                        </span>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-purple-500 tracking-tight" id="kpiIntermittent">0</div>
+                        <div class="text-xs text-purple-500 font-extrabold mt-1.5" id="kpiIntermittentPct">0% of Total</div>
+                    </div>
+                </div>
+
+                <!-- 4. NOT REPORTING BOX -->
+                <div onclick="filterByBox('Not Reporting')" id="boxNotReporting" class="bg-[var(--card-bg)] border border-[var(--border-color)]/60 p-4 rounded-xl shadow-sm cursor-pointer flashing-not-reporting transition-all flex flex-col justify-between">
+                    <div class="text-xs font-black uppercase tracking-wider text-rose-500 mb-1 flex items-center justify-between">
+                        <span>Not Reporting</span>
+                        <span class="relative flex h-3.5 w-3.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-rose-500"></span>
+                        </span>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-rose-500 tracking-tight" id="kpiNotReporting">0</div>
+                        <div class="text-xs text-rose-500 font-extrabold mt-1.5" id="kpiNotReportingPct">0% of Total</div>
+                    </div>
+                </div>
+
+                <!-- 5. PENDING BOX -->
+                <div onclick="filterByBox('Pending')" id="boxPending" class="bg-[var(--card-bg)] border border-[var(--border-color)]/60 p-4 rounded-xl shadow-sm cursor-pointer hover:border-amber-500 transition-all flex flex-col justify-between">
+                    <div class="text-xs font-bold uppercase tracking-wider text-amber-500 mb-1">Pending</div>
+                    <div>
+                        <div class="text-3xl font-black text-amber-500" id="kpiPending">0</div>
+                        <div class="text-xs text-amber-500 font-bold mt-1.5" id="kpiPendingPct">0% of Total</div>
+                    </div>
+                </div>
+
+                <!-- 6. NOT CONNECTED BOX -->
+                <div onclick="filterByBox('Not Connected')" id="boxNotConnected" class="bg-[var(--card-bg)] border border-[var(--border-color)]/60 p-4 rounded-xl shadow-sm cursor-pointer hover:border-zinc-500 transition-all flex flex-col justify-between">
+                    <div class="text-xs font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-400 mb-1">
+                        <span>Not Connected</span>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-zinc-400 dark:text-zinc-300" id="kpiNotConnected">0</div>
+                        <div class="text-xs text-zinc-400 dark:text-zinc-400 font-bold mt-1.5" id="kpiNotConnectedPct">0% of Total</div>
+                    </div>
+                </div>
+
+                <!-- 7. TOTAL AVAILABILITY % BOX -->
+                <div id="boxAvailability" class="bg-[var(--card-bg)] border border-[var(--border-color)]/60 p-4 rounded-xl shadow-md flex flex-col justify-between">
+                    <div class="text-[11px] font-bold uppercase tracking-wider text-black dark:text-black mb-1 flex items-center justify-between">
+                        <span>Availability</span>
+                        <span class="w-3.5 h-3.5 rounded-full rainbow-dot inline-block"></span>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-black dark:text-black" id="kpiHealth">0%</div>
+                        <div class="text-xs text-black dark:text-black font-bold mt-1">Fleet Health</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SITE STATUS MATRIX BREAKDOWN TABLE -->
+            <div id="siteMatrixSection" class="bg-[var(--card-bg)] border border-[var(--border-color)] p-5 rounded-xl shadow-sm">
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-3 gap-2">
+                    <div>
+                        <h3 class="text-sm font-bold flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                            Site Breakdown Matrix (NGC, IPPs, WAPDA, GENCOs, HVDC)
+                        </h3>
+                        <p class="text-xs opacity-75">Detailed operational breakdown per site classification.</p>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-themeBg/80 uppercase font-semibold border-b border-themeBorder">
+                            <tr>
+                                <th class="p-2.5">Site Classification</th>
+                                <th class="p-2.5 text-center">Total RTU</th>
+                                <th class="p-2.5 text-center text-emerald-500">Reporting</th>
+                                <th class="p-2.5 text-center text-purple-500">Intermittent</th>
+                                <th class="p-2.5 text-center text-rose-500">Not Reporting</th>
+                                <th class="p-2.5 text-center text-amber-500">Pending</th>
+                                <th class="p-2.5 text-center text-zinc-400">Not Connected</th>
+                                <th class="p-2.5 text-center">Health %</th>
+                            </tr>
+                        </thead>
+                        <tbody id="siteMatrixBody" class="divide-y divide-themeBorder">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ANALYTICS CHARTS -->
+            <div id="chartsSection" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-[var(--card-bg)] border border-[var(--border-color)] p-5 rounded-xl">
+                    <h3 class="text-sm font-bold mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                        Status Distribution
+                    </h3>
+                    <div class="h-60 relative flex justify-center items-center">
+                        <canvas id="statusChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-[var(--card-bg)] border border-[var(--border-color)] p-5 rounded-xl">
+                    <h3 class="text-sm font-bold mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        % Reporting by Site
+                    </h3>
+                    <div class="h-60 relative">
+                        <canvas id="siteChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- DAILY FLEET STATUS TABLE -->
+        <div id="tableSection" class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-xl overflow-hidden shadow-sm mt-6 no-print">
+            <div class="p-5 border-b border-[var(--border-color)] flex flex-col md:flex-row justify-between md:items-center gap-4">
+                <div>
+                    <h2 class="text-lg font-bold">Station Daily Log Table</h2>
+                    <p class="opacity-75 text-xs mt-0.5">Click any station row to view its status trend graph & history logs</p>
+                </div>
+                
+                <div class="flex flex-wrap items-center gap-3 no-print">
+                    <button onclick="printTableReport()" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg font-medium text-xs flex items-center gap-1.5 transition-all shadow-md active:scale-95">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                        Print Table PDF
+                    </button>
+
+                    <select id="regionFilter" onchange="filterTable()" class="bg-themeBg border border-themeBorder text-xs rounded-lg px-3 py-1.5 focus:outline-none focus:border-blue-500">
+                        <option value="ALL">All Regions</option>
+                        <option value="North">North</option>
+                        <option value="South">South</option>
+                        <option value="Center">Center</option>
+                    </select>
+
+                    <select id="statusFilter" onchange="filterTable()" class="bg-themeBg border border-themeBorder text-xs rounded-lg px-3 py-1.5 focus:outline-none focus:border-blue-500">
+                        <option value="ALL">All Statuses</option>
+                        <option value="Reporting">Reporting</option>
+                        <option value="Not Reporting">Not Reporting</option>
+                        <option value="Not Connected">Not Connected</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Intermittent">Intermittent</option>
+                    </select>
+
+                    <select id="siteFilter" onchange="filterTable()" class="bg-themeBg border border-themeBorder text-xs rounded-lg px-3 py-1.5 focus:outline-none focus:border-blue-500">
+                        <option value="ALL">All Sites</option>
+                        <option value="NGC">NGC</option>
+                        <option value="IPP">IPP</option>
+                        <option value="iPP">iPP</option>
+                        <option value="WAPDA">WAPDA</option>
+                        <option value="GENCO">GENCO</option>
+                        <option value="HVDC">HVDC</option>
+                    </select>
+
+                    <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search Station..." class="bg-themeBg border border-themeBorder text-xs rounded-lg px-3 py-1.5 focus:outline-none focus:border-blue-500">
+
+                    <button onclick="clearAllFilters()" class="bg-themeBg border border-themeBorder px-3 py-1.5 rounded-lg text-xs font-semibold transition-all">
+                        Reset Filters
+                    </button>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-themeBg/80 opacity-80 text-xs font-semibold uppercase tracking-wider">
+                        <tr>
+                            <th class="p-4 cursor-pointer hover:opacity-100" onclick="sortTable('sr_no')">Sr. No ▲▼</th>
+                            <th class="p-4 cursor-pointer hover:opacity-100" onclick="sortTable('station_name')">Station Name ▲▼</th>
+                            <th class="p-4 cursor-pointer hover:opacity-100" onclick="sortTable('site')">Site ▲▼</th>
+                            <th class="p-4 cursor-pointer hover:opacity-100" onclick="sortTable('region')">Region ▲▼</th>
+                            <th class="p-4">RTU Type</th>
+                            <th class="p-4 cursor-pointer hover:opacity-100" onclick="sortTable('status')">Status ▲▼</th>
+                            <th class="p-4">Link Status</th>
+                            <th class="p-4">Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rtuTableBody" class="divide-y divide-themeBorder">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="p-4 bg-themeBg/40 text-xs border-t border-[var(--border-color)] flex justify-between items-center">
+                <span>Showing <strong id="visibleCount">0</strong> of <strong id="totalCount">0</strong> records</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- STATION HISTORY MODAL -->
+    <div id="historyModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div id="modalContainerCard" class="bg-[var(--card-bg)] border border-[var(--border-color)] w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden print-modal-only">
+            
+            <div class="p-6 border-b border-[var(--border-color)] flex justify-between items-center bg-themeBg/80">
+                <div class="space-y-1">
+                    <span class="text-xs uppercase tracking-widest text-blue-500 font-bold">Station Status Trend & History</span>
+                    <h3 id="modalStationName" class="text-2xl font-black tracking-tight"></h3>
+                </div>
+                <button onclick="closeHistoryModal()" class="opacity-75 hover:opacity-100 text-xl font-bold px-3 py-1 rounded-lg bg-themeBg no-print">✕</button>
+            </div>
+            
+            <div id="modalMetaInfo" class="grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 bg-themeBg/40 border-b border-[var(--border-color)] text-sm">
+            </div>
+
+            <!-- Station Trend Sparkline / Colored Status Graph -->
+            <div class="p-5 border-b border-[var(--border-color)] bg-themeBg/20">
+                <div class="flex justify-between items-center mb-2">
+                    <h4 class="text-xs font-bold uppercase tracking-wider opacity-75">Historical Status Trend Graph</h4>
+                    <div class="flex items-center gap-3 text-[10px] font-bold">
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Reporting</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-purple-500"></span> Intermittent</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Pending</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-rose-500"></span> Not Rep/Conn</span>
+                    </div>
+                </div>
+                <div class="h-44 relative">
+                    <canvas id="stationTrendChart"></canvas>
+                </div>
+            </div>
+
+            <div class="p-6 overflow-x-auto">
+                <h4 class="text-xs font-bold uppercase tracking-wider opacity-75 mb-3">Previous Days Status Log Table</h4>
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-themeBg/60 text-xs uppercase opacity-80">
+                        <tr>
+                            <th class="p-3">Date</th>
+                            <th class="p-3">Status</th>
+                            <th class="p-3">Link Status</th>
+                            <th class="p-3">Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody id="modalHistoryTableBody" class="divide-y divide-[var(--border-color)]">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="p-4 bg-themeBg/50 border-t border-[var(--border-color)] flex justify-between items-center no-print">
+                <button onclick="printStationTrend()" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 shadow-md active:scale-95">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                    Print Station Trend PDF
+                </button>
+                <button onclick="closeHistoryModal()" class="bg-themeBg border border-themeBorder px-4 py-2 rounded-lg text-xs font-semibold">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT APPLICATION LOGIC -->
+    <script>
+        let selectedDate = "2026-08-05";
+        let masterRtuMap = {};
+        let activeBoxFilter = "ALL";
+        let statusChartInstance = null;
+        let siteChartInstance = null;
+        let stationTrendChartInstance = null;
+        let currentFilteredData = [];
+
+        const completeStations = [
+          {"sr_no": 1, "station_name": "BAHAWALPUR", "site": "NGC", "region": "North", "rtu_type": "ABB", "daily_logs": {"2026-08-05": {"status": "Not Reporting", "link_status": "Normal", "remarks": "if any"}, "2026-08-06": {"status": "Intermittent", "link_status": "Under Fault", "remarks": "if any"}, "2026-08-07": {"status": "Not Connected", "link_status": "Under Fault", "remarks": "if any"}}},
+          {"sr_no": 2, "station_name": "LAHORE BUND ROAD", "site": "NGC", "region": "South", "rtu_type": "Siemens", "daily_logs": {"2026-08-05": {"status": "Reporting", "link_status": "Not Normal", "remarks": "-"}, "2026-08-06": {"status": "Reporting", "link_status": "Not Normal", "remarks": "-"}, "2026-08-07": {"status": "Reporting", "link_status": "Not Normal", "remarks": "-"}}},
+          {"sr_no": 3, "station_name": "BURHAN", "site": "NGC", "region": "Center", "rtu_type": "Selta", "daily_logs": {"2026-08-05": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-06": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-07": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}}},
+          {"sr_no": 4, "station_name": "DADU 500 kV", "site": "NGC", "region": "South", "rtu_type": "MiCOM", "daily_logs": {"2026-08-05": {"status": "Not Reporting", "link_status": "Under Fault", "remarks": "-"}, "2026-08-06": {"status": "Not Reporting", "link_status": "Under Fault", "remarks": "-"}, "2026-08-07": {"status": "Not Reporting", "link_status": "Under Fault", "remarks": "-"}}},
+          {"sr_no": 5, "station_name": "DAUD KHEL", "site": "NGC", "region": "North", "rtu_type": "SAS", "daily_logs": {"2026-08-05": {"status": "Intermittent", "link_status": "Normal", "remarks": "-"}, "2026-08-06": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-07": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}}},
+          {"sr_no": 6, "station_name": "DOMAIL BANNU", "site": "NGC", "region": "North", "rtu_type": "Gateway", "daily_logs": {"2026-08-05": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-06": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-07": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}}},
+          {"sr_no": 7, "station_name": "GATTI 500 kV", "site": "NGC", "region": "Center", "rtu_type": "DCS", "daily_logs": {"2026-08-05": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-06": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-07": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}}},
+          {"sr_no": 8, "station_name": "GHAKKAR", "site": "NGC", "region": "North", "rtu_type": "Other", "daily_logs": {"2026-08-05": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-06": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-07": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}}},
+          {"sr_no": 9, "station_name": "NEW GHAKKAR", "site": "NGC", "region": "North", "rtu_type": "ABB", "daily_logs": {"2026-08-05": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-06": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-07": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}}},
+          {"sr_no": 10, "station_name": "Guddu", "site": "NGC", "region": "South", "rtu_type": "ABB", "daily_logs": {"2026-08-05": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-06": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-07": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}}},
+          {"sr_no": 69, "station_name": "Appolo Solar", "site": "IPP", "region": "South", "rtu_type": "ABB", "daily_logs": {"2026-08-05": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-06": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-07": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}}},
+          {"sr_no": 79, "station_name": "GHAZI BAROTHA", "site": "WAPDA", "region": "North", "rtu_type": "ABB", "daily_logs": {"2026-08-05": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-06": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-07": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}}},
+          {"sr_no": 92, "station_name": "MUZAFFAR GARH. PH1", "site": "GENCO", "region": "South", "rtu_type": "ABB", "daily_logs": {"2026-08-05": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-06": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-07": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}}},
+          {"sr_no": 129, "station_name": "Tenega Generasi Wind (TGL)", "site": "iPP", "region": "South", "rtu_type": "ABB", "daily_logs": {"2026-08-05": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-06": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-07": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}}},
+          {"sr_no": 154, "station_name": "Lahore C/S (HVDC)", "site": "HVDC", "region": "Center", "rtu_type": "ABB", "daily_logs": {"2026-08-05": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-06": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}, "2026-08-07": {"status": "Reporting", "link_status": "Normal", "remarks": "-"}}}
+        ];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadFromLocalStorage();
+            updateDateDropdown();
+            loadCurrentDateData();
+            initCharts();
+        });
+
+        function changeTheme(themeName) {
+            document.getElementById("htmlRoot").setAttribute("data-theme", themeName);
+            localStorage.setItem("rtu_dashboard_theme", themeName);
+        }
+
+        const savedTheme = localStorage.getItem("rtu_dashboard_theme");
+        if (savedTheme) {
+            document.getElementById("htmlRoot").setAttribute("data-theme", savedTheme);
+        }
+
+        function loadFromLocalStorage() {
+            const savedData = localStorage.getItem("rtu_dashboard_master_db_v31");
+            if (savedData) {
+                try {
+                    masterRtuMap = JSON.parse(savedData);
+                    return;
+                } catch (e) {
+                    console.error("Error loading storage:", e);
+                }
+            }
+
+            completeStations.forEach(item => {
+                masterRtuMap[item.station_name.toUpperCase()] = item;
+            });
+            saveToLocalStorage();
+        }
+
+        function saveToLocalStorage() {
+            localStorage.setItem("rtu_dashboard_master_db_v31", JSON.stringify(masterRtuMap));
+        }
+
+        function clearSavedData() {
+            if (confirm("Reset all historical date logs?")) {
+                localStorage.removeItem("rtu_dashboard_master_db_v31");
+                masterRtuMap = {};
+                completeStations.forEach(item => {
+                    masterRtuMap[item.station_name.toUpperCase()] = item;
+                });
+                saveToLocalStorage();
+                updateDateDropdown();
+                loadCurrentDateData();
+                updateCharts();
+                alert("Reset complete!");
+            }
+        }
+
+        function updateDateDropdown() {
+            const dateSelect = document.getElementById("dateSelect");
+            const allDates = new Set();
+
+            Object.values(masterRtuMap).forEach(rtu => {
+                if (rtu.daily_logs) {
+                    Object.keys(rtu.daily_logs).forEach(d => allDates.add(d));
+                }
+            });
+
+            const sortedDates = Array.from(allDates).sort().reverse();
+            if (sortedDates.length > 0 && !allDates.has(selectedDate)) {
+                selectedDate = sortedDates[0];
+            }
+
+            dateSelect.innerHTML = "";
+            sortedDates.forEach(dateStr => {
+                const opt = document.createElement("option");
+                opt.value = dateStr;
+                opt.textContent = dateStr;
+                if (dateStr === selectedDate) opt.selected = true;
+                dateSelect.appendChild(opt);
+            });
+        }
+
+        function handleDateChange() {
+            selectedDate = document.getElementById("dateSelect").value;
+            loadCurrentDateData();
+            updateCharts();
+        }
+
+        function clearAllFilters() {
+            activeBoxFilter = "ALL";
+            highlightActiveBox();
+            document.getElementById("regionFilter").value = "ALL";
+            document.getElementById("statusFilter").value = "ALL";
+            document.getElementById("siteFilter").value = "ALL";
+            document.getElementById("searchInput").value = "";
+            filterTable();
+        }
+
+        function printTableReport() {
+            document.getElementById('pdfCaptureArea').classList.add('no-print');
+            window.print();
+            setTimeout(() => {
+                document.getElementById('pdfCaptureArea').classList.remove('no-print');
+            }, 500);
+        }
+
+        /* Perfect Canvas Snapshot Landscape One-Page PDF Export */
+        async function printSummarySnapshotPDF() {
+            const banner = document.getElementById('pdfHeaderBanner');
+            const dateLbl = document.getElementById('pdfReportDate');
+            banner.classList.remove('hidden');
+            dateLbl.textContent = `Report Date: ${selectedDate} | Prepared by: Asim Siddique, Sr. Manager (Electrical) NPCC Islamabad`;
+
+            const captureElement = document.getElementById('pdfCaptureArea');
+
+            try {
+                const canvas = await html2canvas(captureElement, {
+                    scale: 2,
+                    useCORS: true,
+                    logging: false,
+                    backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--bg-color').trim() || '#f8fafc'
+                });
+
+                banner.classList.add('hidden');
+
+                const imgData = canvas.toDataURL('image/png');
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({
+                    orientation: 'landscape',
+                    unit: 'mm',
+                    format: 'a4'
+                });
+
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = pdf.internal.pageSize.getHeight();
+                
+                const imgWidth = pdfWidth - 10; // 5mm margins each side
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                let heightLeft = imgHeight;
+                let position = 5;
+
+                pdf.addImage(imgData, 'PNG', 5, position, imgWidth, imgHeight);
+                heightLeft -= (pdfHeight - 10);
+
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight + 5;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 5, position, imgWidth, imgHeight);
+                    heightLeft -= (pdfHeight - 10);
+                }
+
+                pdf.save(`RTU_Summary_Report_${selectedDate}.pdf`);
+
+            } catch (err) {
+                console.error("PDF generation failed:", err);
+                banner.classList.add('hidden');
+                alert("Error generating PDF snapshot: " + err.message);
+            }
+        }
+
+        function printStationTrend() {
+            document.body.classList.add('modal-open');
+            window.print();
+            setTimeout(() => {
+                document.body.classList.remove('modal-open');
+            }, 500);
+        }
+
+        function filterByBox(statusName) {
+            if (activeBoxFilter === statusName) {
+                activeBoxFilter = "ALL";
+            } else {
+                activeBoxFilter = statusName;
+            }
+            highlightActiveBox();
+            filterTable();
+        }
+
+        function highlightActiveBox() {
+            ['Reporting', 'Not Reporting', 'Not Connected', 'Pending', 'Intermittent'].forEach(st => {
+                const box = document.getElementById('box' + st.replace(/\s+/g, ''));
+                if (box) {
+                    if (activeBoxFilter === st) {
+                        box.classList.remove('border-[var(--border-color)]/60', 'flashing-reporting', 'flashing-not-reporting', 'flashing-intermittent');
+                        box.classList.add('border-4', 'border-blue-500', 'shadow-xl', 'scale-[1.02]');
+                    } else {
+                        box.classList.remove('border-4', 'border-blue-500', 'shadow-xl', 'scale-[1.02]');
+                        box.classList.add('border', 'border-[var(--border-color)]/60');
+                        if (st === 'Reporting') box.classList.add('flashing-reporting');
+                        if (st === 'Not Reporting') box.classList.add('flashing-not-reporting');
+                        if (st === 'Intermittent') box.classList.add('flashing-intermittent');
+                    }
+                }
+            });
+        }
+
+        function loadCurrentDateData() {
+            filterTable();
+        }
+
+        function normalizeStatus(val) {
+            if (!val) return "Pending";
+            let s = String(val).trim();
+            let lower = s.toLowerCase();
+            if (lower.includes("reporting") && !lower.includes("not")) return "Reporting";
+            if (lower.includes("not reporting")) return "Not Reporting";
+            if (lower.includes("not connected")) return "Not Connected";
+            if (lower.includes("intermittent")) return "Intermittent";
+            if (lower.includes("pending")) return "Pending";
+            return s;
+        }
+
+        function getStatusBadgeStyle(statusStr) {
+            const s = normalizeStatus(statusStr);
+            let lower = s.toLowerCase();
+            if (lower === "reporting") {
+                return { badgeClass: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20", dotClass: "bg-emerald-500" };
+            } else if (lower.includes("not reporting")) {
+                return { badgeClass: "bg-rose-500/10 text-rose-500 border-rose-500/20", dotClass: "bg-rose-500" };
+            } else if (lower.includes("not connected")) {
+                return { badgeClass: "bg-zinc-500/10 text-zinc-400 border-zinc-500/20", dotClass: "" };
+            } else if (lower.includes("intermittent")) {
+                return { badgeClass: "bg-purple-500/10 text-purple-500 border-purple-500/20", dotClass: "bg-purple-500" };
+            } else if (lower.includes("pending")) {
+                return { badgeClass: "bg-amber-500/10 text-amber-500 border-amber-500/20", dotClass: "bg-amber-500" };
+            } else {
+                return { badgeClass: "bg-slate-500/10 text-slate-400 border-slate-500/20", dotClass: "bg-slate-400" };
+            }
+        }
+
+        function showStationHistory(stationName) {
+            const key = stationName.toUpperCase();
+            const rtu = masterRtuMap[key];
+            if (!rtu) return;
+
+            document.getElementById("modalStationName").textContent = rtu.station_name;
+            
+            const logs = rtu.daily_logs || {};
+            const sortedDates = Object.keys(logs).sort();
+            
+            let latestDate = sortedDates.length > 0 ? sortedDates[sortedDates.length - 1] : selectedDate;
+            let latestLog = sortedDates.length > 0 ? logs[latestDate] : { status: "Pending", link_status: "-", remarks: "-" };
+            let cleanCurrentStatus = normalizeStatus(latestLog.status);
+
+            const metaContainer = document.getElementById("modalMetaInfo");
+            metaContainer.innerHTML = `
+                <div class="bg-[var(--card-bg)] p-3.5 rounded-xl border border-[var(--border-color)] shadow-sm">
+                    <span class="text-[11px] uppercase tracking-wider opacity-75 block mb-1">Site & Classification</span>
+                    <strong class="text-lg font-extrabold">${rtu.site || 'N/A'}</strong>
+                </div>
+                <div class="bg-[var(--card-bg)] p-3.5 rounded-xl border border-[var(--border-color)] shadow-sm">
+                    <span class="text-[11px] uppercase tracking-wider opacity-75 block mb-1">Region & RTU Type</span>
+                    <strong class="text-blue-500 text-base font-bold">${rtu.region || 'N/A'} Region</strong> <span class="text-xs opacity-75">(${rtu.rtu_type || 'N/A'})</span>
+                </div>
+                <div class="bg-[var(--card-bg)] p-3.5 rounded-xl border border-[var(--border-color)] shadow-sm">
+                    <span class="text-[11px] uppercase tracking-wider opacity-75 block mb-1">Current Status (${latestDate})</span>
+                    <strong class="text-emerald-500 text-base font-extrabold">${cleanCurrentStatus}</strong>
+                </div>
+            `;
+
+            renderStationTrendChart(sortedDates, logs);
+
+            const reverseDates = [...sortedDates].reverse();
+            const tbody = document.getElementById("modalHistoryTableBody");
+            tbody.innerHTML = "";
+
+            if (reverseDates.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="4" class="p-4 text-center opacity-75">No historical logs available yet.</td></tr>`;
+            } else {
+                reverseDates.forEach(dStr => {
+                    const log = logs[dStr];
+                    const cleanStatus = normalizeStatus(log.status);
+                    const style = getStatusBadgeStyle(cleanStatus);
+                    const dotSpan = style.dotClass ? `<span class="w-1.5 h-1.5 mr-1.5 rounded-full ${style.dotClass}"></span>` : '';
+
+                    const tr = document.createElement("tr");
+                    tr.className = "hover:bg-themeBg/40";
+                    tr.innerHTML = `
+                        <td class="p-2 font-mono text-xs text-blue-500">${dStr}</td>
+                        <td class="p-2">
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border ${style.badgeClass}">
+                                ${dotSpan}
+                                ${cleanStatus}
+                            </span>
+                        </td>
+                        <td class="p-2 opacity-90">${log.link_status || '-'}</td>
+                        <td class="p-2 opacity-75 text-xs italic">${log.remarks || '-'}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            }
+
+            document.getElementById("historyModal").classList.remove("hidden");
+        }
+
+        function renderStationTrendChart(sortedDates, logs) {
+            const ctx = document.getElementById('stationTrendChart').getContext('2d');
+            
+            const scoreMap = { "Reporting": 3, "Intermittent": 2, "Pending": 1, "Not Reporting": 0, "Not Connected": 0 };
+            const colorMap = {
+                "Reporting": "#10b981",    // Emerald
+                "Intermittent": "#a855f7", // Purple
+                "Pending": "#f59e0b",      // Amber
+                "Not Reporting": "#ef4444",// Rose
+                "Not Connected": "#71717a" // Zinc Grey
+            };
+
+            const chartData = sortedDates.map(d => {
+                let st = normalizeStatus(logs[d] ? logs[d].status : "Pending");
+                return scoreMap[st] !== undefined ? scoreMap[st] : 1;
+            });
+
+            const pointColors = sortedDates.map(d => {
+                let st = normalizeStatus(logs[d] ? logs[d].status : "Pending");
+                return colorMap[st] || "#3b82f6";
+            });
+
+            const labelMapping = ["Not Rep/Conn", "Pending", "Intermittent", "Reporting"];
+
+            if (stationTrendChartInstance) {
+                stationTrendChartInstance.destroy();
+            }
+
+            stationTrendChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: sortedDates,
+                    datasets: [{
+                        label: 'Status Trend',
+                        data: chartData,
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.15,
+                        pointBackgroundColor: pointColors,
+                        pointBorderColor: pointColors,
+                        pointRadius: 7,
+                        pointHoverRadius: 9
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: (ctx) => {
+                                    let val = ctx.parsed.y;
+                                    let textStatus = "Reporting";
+                                    if (val === 0) textStatus = "Not Reporting / Not Connected";
+                                    else if (val === 1) textStatus = "Pending";
+                                    else if (val === 2) textStatus = "Intermittent";
+                                    return `Status: ${textStatus}`;
+                                }
+                            }
+                        },
+                        datalabels: { display: false }
+                    },
+                    scales: {
+                        x: { ticks: { font: { size: 10 } }, grid: { color: 'rgba(150,150,150,0.15)' } },
+                        y: { 
+                            min: -0.5, 
+                            max: 3.5, 
+                            ticks: { 
+                                stepSize: 1,
+                                callback: (val) => labelMapping[val] || '' 
+                            }, 
+                            grid: { color: 'rgba(150,150,150,0.15)' } 
+                        }
+                    }
+                }
+            });
+        }
+
+        function closeHistoryModal() {
+            document.getElementById("historyModal").classList.add("hidden");
+        }
+
+        function handleExcelUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = new Uint8Array(e.target.result);
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+                    const rows = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+                    let headerRowIdx = -1;
+                    for (let i = 0; i < Math.min(10, rows.length); i++) {
+                        if (rows[i] && rows[i].map(c => String(c).toLowerCase()).includes("station name")) {
+                            headerRowIdx = i;
+                            break;
+                        }
+                    }
+
+                    if (headerRowIdx === -1) {
+                        alert("Could not find 'Station Name' header row.");
+                        event.target.value = '';
+                        return;
+                    }
+
+                    const headers = rows[headerRowIdx].map(h => String(h).trim().toLowerCase());
+                    const srNoIdx = headers.indexOf("sr.no") !== -1 ? headers.indexOf("sr.no") : headers.indexOf("sr. no");
+                    const stationIdx = headers.indexOf("station name");
+                    const siteIdx = headers.indexOf("site") !== -1 ? headers.indexOf("site") : headers.indexOf("site ");
+                    const rtuTypeIdx = headers.indexOf("rtu type");
+                    const regionIdx = headers.indexOf("region");
+
+                    const dateColumns = {};
+                    for (let r = 0; r < headerRowIdx; r++) {
+                        const rowVals = rows[r];
+                        if (!rowVals) continue;
+                        for (let c = 0; c < rowVals.length; c++) {
+                            let val = rowVals[c];
+                            if (val !== undefined && val !== null && String(val).trim() !== "") {
+                                let dStr = null;
+                                if (typeof val === 'number') {
+                                    let jsDate = new Date(Math.round((val - 25569)*86400*1000));
+                                    dStr = jsDate.toISOString().split('T')[0];
+                                } else {
+                                    let vStr = String(val).trim();
+                                    let parsed = new Date(vStr);
+                                    if (!isNaN(parsed)) {
+                                        dStr = parsed.toISOString().split('T')[0];
+                                    } else if (vStr.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                                        dStr = vStr;
+                                    }
+                                }
+                                if (dStr) {
+                                    dateColumns[c] = dStr;
+                                }
+                            }
+                        }
+                    }
+
+                    let updatedCount = 0;
+                    for (let i = headerRowIdx + 1; i < rows.length; i++) {
+                        const r = rows[i];
+                        if (!r || r.length === 0) continue;
+
+                        const stationName = r[stationIdx] ? String(r[stationIdx]).trim() : "";
+                        if (!stationName) continue;
+
+                        const key = stationName.toUpperCase();
+                        if (!masterRtuMap[key]) {
+                            masterRtuMap[key] = {
+                                sr_no: (srNoIdx !== -1 && r[srNoIdx]) ? r[srNoIdx] : Object.keys(masterRtuMap).length + 1,
+                                station_name: stationName,
+                                site: siteIdx !== -1 && r[siteIdx] ? String(r[siteIdx]).trim() : "NGC",
+                                region: regionIdx !== -1 && r[regionIdx] ? String(r[regionIdx]).trim() : "North",
+                                rtu_type: rtuTypeIdx !== -1 && r[rtuTypeIdx] ? String(r[rtuTypeIdx]).trim() : "ABB",
+                                daily_logs: {}
+                            };
+                        }
+
+                        if (siteIdx !== -1 && r[siteIdx]) masterRtuMap[key].site = String(r[siteIdx]).trim();
+                        if (regionIdx !== -1 && r[regionIdx]) masterRtuMap[key].region = String(r[regionIdx]).trim();
+                        if (rtuTypeIdx !== -1 && r[rtuTypeIdx]) masterRtuMap[key].rtu_type = String(r[rtuTypeIdx]).trim();
+
+                        Object.keys(dateColumns).forEach(statusColIdx => {
+                            let colC = parseInt(statusColIdx);
+                            let dStr = dateColumns[statusColIdx];
+
+                            let statusVal = normalizeStatus(r[colC]);
+                            let linkVal = (colC + 1 < r.length && r[colC + 1]) ? String(r[colC + 1]).trim() : "-";
+                            let remarksVal = (colC + 2 < r.length && r[colC + 2]) ? String(r[colC + 2]).trim() : "-";
+
+                            if (!masterRtuMap[key].daily_logs) masterRtuMap[key].daily_logs = {};
+                            masterRtuMap[key].daily_logs[dStr] = {
+                                status: statusVal && statusVal.toLowerCase() !== 'nan' ? statusVal : "Pending",
+                                link_status: linkVal && linkVal.toLowerCase() !== 'nan' ? linkVal : "-",
+                                remarks: remarksVal && remarksVal.toLowerCase() !== 'nan' ? remarksVal : "-"
+                            };
+                        });
+
+                        updatedCount++;
+                    }
+
+                    saveToLocalStorage();
+                    updateDateDropdown();
+                    loadCurrentDateData();
+                    updateCharts();
+                    updateSiteMatrix();
+                    alert(`Successfully imported ${updatedCount} stations with multi-date logs!`);
+
+                } catch (err) {
+                    console.error("Parsing error:", err);
+                    alert("Error parsing Excel file: " + err.message);
+                }
+                event.target.value = '';
+            };
+
+            reader.readAsArrayBuffer(file);
+        }
+
+        function renderDashboard(dataToRender) {
+            renderTable(dataToRender);
+            updateKPIs();
+            updateSiteMatrix();
+        }
+
+        function renderTable(data) {
+            const tbody = document.getElementById("rtuTableBody");
+            tbody.innerHTML = "";
+
+            data.forEach(rtu => {
+                const cleanStatus = normalizeStatus(rtu.status);
+                const style = getStatusBadgeStyle(cleanStatus);
+                const dotSpan = style.dotClass ? `<span class="w-1.5 h-1.5 mr-1.5 rounded-full ${style.dotClass}"></span>` : '';
+
+                const tr = document.createElement("tr");
+                tr.className = "hover:bg-themeBg/50 transition-colors cursor-pointer";
+                tr.title = "Click to view status trend graph & history for this station";
+                tr.onclick = () => showStationHistory(rtu.station_name);
+
+                tr.innerHTML = `
+                    <td class="p-2 opacity-75 font-mono text-xs">${rtu.sr_no}</td>
+                    <td class="p-2 font-bold underline decoration-slate-500 hover:text-blue-500">${rtu.station_name}</td>
+                    <td class="p-2">
+                        <span class="px-2 py-0.5 rounded text-xs font-semibold bg-themeBg border border-themeBorder">
+                            ${rtu.site || 'N/A'}
+                        </span>
+                    </td>
+                    <td class="p-2 opacity-90">${rtu.region || '-'}</td>
+                    <td class="p-2 opacity-75 font-medium">${rtu.rtu_type || '-'}</td>
+                    <td class="p-2">
+                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border ${style.badgeClass}">
+                            ${dotSpan}
+                            ${cleanStatus}
+                        </span>
+                    </td>
+                    <td class="p-2 opacity-75">${rtu.link_status || '-'}</td>
+                    <td class="p-2 opacity-75 text-xs italic">${rtu.remarks || '-'}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            document.getElementById("visibleCount").textContent = data.length;
+            document.getElementById("totalCount").textContent = Object.keys(masterRtuMap).length;
+        }
+
+        function updateSiteMatrix() {
+            const siteGroups = {
+                "NGC": { total: 0, reporting: 0, intermittent: 0, notReporting: 0, pending: 0, notConnected: 0 },
+                "IPP": { total: 0, reporting: 0, intermittent: 0, notReporting: 0, pending: 0, notConnected: 0 },
+                "WAPDA": { total: 0, reporting: 0, intermittent: 0, notReporting: 0, pending: 0, notConnected: 0 },
+                "GENCO": { total: 0, reporting: 0, intermittent: 0, notReporting: 0, pending: 0, notConnected: 0 },
+                "HVDC": { total: 0, reporting: 0, intermittent: 0, notReporting: 0, pending: 0, notConnected: 0 }
+            };
+
+            Object.values(masterRtuMap).forEach(rtu => {
+                const log = (rtu.daily_logs && rtu.daily_logs[selectedDate]) 
+                    ? rtu.daily_logs[selectedDate] 
+                    : { status: "Pending" };
+                
+                let siteKey = (rtu.site || "NGC").toUpperCase();
+                if (siteKey.includes("IPP")) siteKey = "IPP";
+                if (!siteGroups[siteKey]) siteKey = "NGC";
+
+                siteGroups[siteKey].total++;
+                const st = normalizeStatus(log.status);
+                if (st === "Reporting") siteGroups[siteKey].reporting++;
+                else if (st === "Intermittent") siteGroups[siteKey].intermittent++;
+                else if (st === "Not Reporting") siteGroups[siteKey].notReporting++;
+                else if (st === "Pending") siteGroups[siteKey].pending++;
+                else if (st === "Not Connected") siteGroups[siteKey].notConnected++;
+            });
+
+            const tbody = document.getElementById("siteMatrixBody");
+            tbody.innerHTML = "";
+
+            Object.keys(siteGroups).forEach(site => {
+                const grp = siteGroups[site];
+                const health = grp.total > 0 ? ((grp.reporting / grp.total) * 100).toFixed(1) : 0;
+
+                const tr = document.createElement("tr");
+                tr.className = "hover:bg-themeBg/40 transition-colors";
+                tr.innerHTML = `
+                    <td class="p-2.5 font-bold uppercase tracking-wider">${site}</td>
+                    <td class="p-2.5 text-center font-mono font-bold text-sm">${grp.total}</td>
+                    <td class="p-2.5 text-center font-mono font-bold text-sm text-emerald-500 bg-emerald-500/5">${grp.reporting}</td>
+                    <td class="p-2.5 text-center font-mono font-bold text-sm text-purple-500 bg-purple-500/5">${grp.intermittent}</td>
+                    <td class="p-2.5 text-center font-mono font-bold text-sm text-rose-500 bg-rose-500/5">${grp.notReporting}</td>
+                    <td class="p-2.5 text-center font-mono font-bold text-sm text-amber-500 bg-amber-500/5">${grp.pending}</td>
+                    <td class="p-2.5 text-center font-mono font-bold text-sm text-zinc-400 bg-zinc-500/5">${grp.notConnected}</td>
+                    <td class="p-2.5 text-center font-mono font-extrabold text-sm text-blue-500">${health}%</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function updateKPIs() {
+            let allForDate = [];
+            Object.values(masterRtuMap).forEach(rtu => {
+                const log = (rtu.daily_logs && rtu.daily_logs[selectedDate]) 
+                    ? rtu.daily_logs[selectedDate] 
+                    : { status: "Pending", link_status: "-", remarks: "-" };
+
+                allForDate.push({
+                    status: normalizeStatus(log.status)
+                });
+            });
+
+            const total = allForDate.length;
+            const reporting = allForDate.filter(r => r.status === "Reporting").length;
+            const notReporting = allForDate.filter(r => r.status === "Not Reporting").length;
+            const notConnected = allForDate.filter(r => r.status === "Not Connected").length;
+            const pending = allForDate.filter(r => r.status === "Pending").length;
+            const intermittent = allForDate.filter(r => r.status === "Intermittent").length;
+            const availability = total > 0 ? ((reporting / total) * 100).toFixed(1) : 0;
+
+            document.getElementById("kpiTotal").textContent = total;
+            document.getElementById("kpiHealth").textContent = `${availability}%`;
+
+            document.getElementById("kpiReporting").textContent = reporting;
+            document.getElementById("kpiReportingPct").textContent = `${total > 0 ? ((reporting/total)*100).toFixed(1) : 0}% of Total`;
+
+            document.getElementById("kpiIntermittent").textContent = intermittent;
+            document.getElementById("kpiIntermittentPct").textContent = `${total > 0 ? ((intermittent/total)*100).toFixed(1) : 0}% of Total`;
+
+            document.getElementById("kpiNotReporting").textContent = notReporting;
+            document.getElementById("kpiNotReportingPct").textContent = `${total > 0 ? ((notReporting/total)*100).toFixed(1) : 0}% of Total`;
+
+            document.getElementById("kpiPending").textContent = pending;
+            document.getElementById("kpiPendingPct").textContent = `${total > 0 ? ((pending/total)*100).toFixed(1) : 0}% of Total`;
+
+            document.getElementById("kpiNotConnected").textContent = notConnected;
+            document.getElementById("kpiNotConnectedPct").textContent = `${total > 0 ? ((notConnected/total)*100).toFixed(1) : 0}% of Total`;
+        }
+
+        function filterTable() {
+            const searchQuery = document.getElementById("searchInput").value.toLowerCase();
+            const regionVal = document.getElementById("regionFilter").value;
+            const dropdownStatusVal = document.getElementById("statusFilter").value;
+            const siteVal = document.getElementById("siteFilter").value;
+
+            const allCurrent = [];
+            Object.values(masterRtuMap).forEach(rtu => {
+                const log = (rtu.daily_logs && rtu.daily_logs[selectedDate]) 
+                    ? rtu.daily_logs[selectedDate] 
+                    : { status: "Pending", link_status: "-", remarks: "-" };
+
+                allCurrent.push({
+                    sr_no: rtu.sr_no,
+                    station_name: rtu.station_name,
+                    site: rtu.site,
+                    region: rtu.region || "North",
+                    rtu_type: rtu.rtu_type || "ABB",
+                    status: normalizeStatus(log.status),
+                    link_status: log.link_status || "-",
+                    remarks: log.remarks || "-"
+                });
+            });
+
+            currentFilteredData = allCurrent.filter(r => {
+                const matchesSearch = r.station_name.toLowerCase().includes(searchQuery) || (r.rtu_type && r.rtu_type.toLowerCase().includes(searchQuery));
+                const matchesRegion = (regionVal === "ALL") || (r.region.toLowerCase() === regionVal.toLowerCase());
+                const matchesSite = (siteVal === "ALL") || (r.site.toLowerCase() === siteVal.toLowerCase());
+                
+                let matchesStatus = true;
+                if (activeBoxFilter !== "ALL") {
+                    matchesStatus = (r.status === activeBoxFilter);
+                } else if (dropdownStatusVal !== "ALL") {
+                    matchesStatus = (r.status === dropdownStatusVal);
+                }
+
+                return matchesSearch && matchesRegion && matchesStatus && matchesSite;
+            });
+
+            renderDashboard(currentFilteredData);
+        }
+
+        let currentSortKey = '';
+        let sortAsc = true;
+        function sortTable(key) {
+            if (currentSortKey === key) {
+                sortAsc = !sortAsc;
+            } else {
+                currentSortKey = key;
+                sortAsc = true;
+            }
+
+            currentFilteredData.sort((a, b) => {
+                let valA = a[key] !== undefined ? a[key] : '';
+                let valB = b[key] !== undefined ? b[key] : '';
+
+                if (typeof valA === 'string') valA = valA.toLowerCase();
+                if (typeof valB === 'string') valB = valB.toLowerCase();
+
+                if (valA < valB) return sortAsc ? -1 : 1;
+                if (valA > valB) return sortAsc ? 1 : -1;
+                return 0;
+            });
+
+            renderTable(currentFilteredData);
+        }
+
+        function initCharts() {
+            if (typeof ChartDataLabels !== 'undefined') {
+                Chart.register(ChartDataLabels);
+            }
+
+            const ctx1 = document.getElementById('statusChart').getContext('2d');
+            statusChartInstance = new Chart(ctx1, {
+                type: 'doughnut',
+                data: getStatusChartData(),
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'right', labels: { font: { size: 10 } } },
+                        datalabels: {
+                            color: '#fff',
+                            formatter: (value) => value > 0 ? value : '',
+                            font: { weight: 'bold', size: 11 }
+                        }
+                    }
+                }
+            });
+
+            const ctx2 = document.getElementById('siteChart').getContext('2d');
+            siteChartInstance = new Chart(ctx2, {
+                type: 'bar',
+                data: getFixedSiteChartData(),
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: (ctx) => `Reporting Rate: ${ctx.parsed.y}%`
+                            }
+                        },
+                        datalabels: {
+                            anchor: 'end',
+                            align: 'top',
+                            font: { size: 10, weight: 'bold' },
+                            formatter: (value) => value > 0 ? value + '%' : ''
+                        }
+                    },
+                    scales: {
+                        x: { ticks: { font: { size: 10 } }, grid: { color: 'rgba(150,150,150,0.15)' } },
+                        y: { ticks: { callback: (val) => val + "%" }, grid: { color: 'rgba(150,150,150,0.15)' }, min: 0, max: 110 }
+                    }
+                }
+            });
+        }
+
+        function getStatusChartData() {
+            const counts = { "Reporting": 0, "Intermittent": 0, "Not Reporting": 0, "Pending": 0, "Not Connected": 0 };
+            currentFilteredData.forEach(r => {
+                const s = normalizeStatus(r.status);
+                counts[s] = (counts[s] || 0) + 1;
+            });
+
+            return {
+                labels: Object.keys(counts),
+                datasets: [{
+                    data: Object.values(counts),
+                    backgroundColor: ['#10b981', '#a855f7', '#ef4444', '#f59e0b', '#71717a']
+                }]
+            };
+        }
+
+        function getFixedSiteChartData() {
+            const siteTotals = {};
+            const siteReporting = {};
+
+            Object.values(masterRtuMap).forEach(rtu => {
+                const log = (rtu.daily_logs && rtu.daily_logs[selectedDate]) 
+                    ? rtu.daily_logs[selectedDate] 
+                    : { status: "Pending" };
+                
+                const site = (rtu.site || "Other").toUpperCase();
+                siteTotals[site] = (siteTotals[site] || 0) + 1;
+                if (normalizeStatus(log.status) === "Reporting") {
+                    siteReporting[site] = (siteReporting[site] || 0) + 1;
+                }
+            });
+
+            const sites = Object.keys(siteTotals);
+            const percentages = sites.map(site => {
+                const total = siteTotals[site];
+                const rep = siteReporting[site] || 0;
+                return total > 0 ? parseFloat(((rep / total) * 100).toFixed(1)) : 0;
+            });
+
+            return {
+                labels: sites,
+                datasets: [{
+                    label: '% Reporting',
+                    data: percentages,
+                    backgroundColor: '#10b981',
+                    borderRadius: 6
+                }]
+            };
+        }
+
+        function updateCharts() {
+            if (statusChartInstance && siteChartInstance) {
+                statusChartInstance.data = getStatusChartData();
+                statusChartInstance.update();
+
+                siteChartInstance.data = getFixedSiteChartData();
+                siteChartInstance.update();
+            }
+        }
+    </script>
+</body>
+</html>
