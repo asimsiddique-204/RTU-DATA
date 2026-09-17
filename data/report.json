@@ -1,0 +1,5202 @@
+{
+  "stations": [
+    {
+      "sr": 1,
+      "name": "BAHAWALPUR",
+      "site": "NGC",
+      "rtuType": "ABB",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": "if any"
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": "if any"
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": "if any"
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": "if any"
+        }
+      }
+    },
+    {
+      "sr": 2,
+      "name": "LAHORE BUND ROAD",
+      "site": "NGC",
+      "rtuType": "Siemens",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 3,
+      "name": "BURHAN",
+      "site": "NGC",
+      "rtuType": "Selta",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 4,
+      "name": "DADU 500 kV",
+      "site": "NGC",
+      "rtuType": "MiCOM",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 5,
+      "name": "DAUD KHEL",
+      "site": "NGC",
+      "rtuType": "SAS",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 6,
+      "name": "DOMAIL BANNU",
+      "site": "NGC",
+      "rtuType": "Gateway",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 7,
+      "name": "GATTI 500 kV",
+      "site": "NGC",
+      "rtuType": "DCS",
+      "location": "Faisalabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 8,
+      "name": "GHAKKAR",
+      "site": "NGC",
+      "rtuType": "Other",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 9,
+      "name": "NEW GHAKKAR",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 10,
+      "name": "Guddu",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 11,
+      "name": "Gujrat New",
+      "site": "NGC",
+      "rtuType": "ABB",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 12,
+      "name": "HALA ROAD",
+      "site": "NGC",
+      "rtuType": "Siemens",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 13,
+      "name": "ISLAMABAD UNIVERSITY",
+      "site": "NGC",
+      "rtuType": "Selta",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 14,
+      "name": "ISLAMABAD PESHAWAR ROAD",
+      "site": "NGC",
+      "rtuType": "MiCOM",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 15,
+      "name": "Jamshoro",
+      "site": "NGC",
+      "rtuType": "SAS",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 16,
+      "name": "JARANWALA ROAD",
+      "site": "NGC",
+      "rtuType": "Gateway",
+      "location": "Faisalabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 17,
+      "name": "KALA SHAH KAKU",
+      "site": "NGC",
+      "rtuType": "DCS",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 18,
+      "name": "LAHORE Sheikhupura 500 kV",
+      "site": "NGC",
+      "rtuType": "Other",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 19,
+      "name": "Lalian",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Faisalabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 20,
+      "name": "LUDEWALA",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Faisalabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 21,
+      "name": "MARDAN",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 22,
+      "name": "MUZAFFAR GARH NEW",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 23,
+      "name": "MUZAFFAR GARH",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 24,
+      "name": "NEW MULTAN",
+      "site": "NGC",
+      "rtuType": "ABB",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 25,
+      "name": "NEW REWAT",
+      "site": "NGC",
+      "rtuType": "Siemens",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 26,
+      "name": "NGPS MULTAN",
+      "site": "NGC",
+      "rtuType": "Selta",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 27,
+      "name": "NISHATABAD",
+      "site": "NGC",
+      "rtuType": "MiCOM",
+      "location": "Faisalabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 28,
+      "name": "NEW KOTLAKHPAT",
+      "site": "NGC",
+      "rtuType": "SAS",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 29,
+      "name": "Nowshehra 220",
+      "site": "NGC",
+      "rtuType": "Gateway",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 30,
+      "name": "RAVI",
+      "site": "NGC",
+      "rtuType": "DCS",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 31,
+      "name": "SAMMUNDARI ROAD",
+      "site": "NGC",
+      "rtuType": "Other",
+      "location": "Faisalabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 32,
+      "name": "SARFARAZNAGAR",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 33,
+      "name": "SHAHIBAGH",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 34,
+      "name": "SHEIKH MUHAMMADI",
+      "site": "NGC",
+      "rtuType": "ABB",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 35,
+      "name": "SAHUWALA SIALKOT",
+      "site": "NGC",
+      "rtuType": "Siemens",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 36,
+      "name": "T. M. KHAN",
+      "site": "NGC",
+      "rtuType": "Selta",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 37,
+      "name": "VEHARI",
+      "site": "NGC",
+      "rtuType": "MiCOM",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 38,
+      "name": "YOUSAFWALA (Sahiwal)",
+      "site": "NGC",
+      "rtuType": "SAS",
+      "location": "Faisalabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 39,
+      "name": "Mansehra",
+      "site": "NGC",
+      "rtuType": "Gateway",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 40,
+      "name": "D.G.Khan",
+      "site": "NGC",
+      "rtuType": "DCS",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 41,
+      "name": "SHIKAR PUR 220 kV",
+      "site": "NGC",
+      "rtuType": "Other",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 42,
+      "name": "New Shalamar",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 43,
+      "name": "Wapda Town",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Not Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 44,
+      "name": "SHIKARPUR 500 kV",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 45,
+      "name": "Raheem Yar Khan",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 46,
+      "name": "Jhimpir - I 220 kV",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 47,
+      "name": "Ghazi Road",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 48,
+      "name": "Kassowal",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Faisalabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 49,
+      "name": "Moro",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 50,
+      "name": "Rohri",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 51,
+      "name": "D.I.Khan",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 52,
+      "name": "Faisalabad West",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Faisalabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 53,
+      "name": "Lal Sohanra",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 54,
+      "name": "New Lahore 500 (LHR South)",
+      "site": "NGC",
+      "rtuType": "ABB",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 55,
+      "name": "Bandala New",
+      "site": "NGC",
+      "rtuType": "Siemens",
+      "location": "Faisalabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 56,
+      "name": "Jhimpir-II 220 kV",
+      "site": "NGC",
+      "rtuType": "Selta",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Not Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 57,
+      "name": "Chistian-220",
+      "site": "NGC",
+      "rtuType": "MiCOM",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 58,
+      "name": "Lahore North",
+      "site": "NGC",
+      "rtuType": "SAS",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 59,
+      "name": "Dera Murad Jamali",
+      "site": "NGC",
+      "rtuType": "Gateway",
+      "location": "Quetta",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Not Reporting",
+          "l": "Intermittent",
+          "r": "PLC Link Issue"
+        }
+      }
+    },
+    {
+      "sr": 60,
+      "name": "SIBBI",
+      "site": "NGC",
+      "rtuType": "DCS",
+      "location": "Quetta",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Not Reporting",
+          "l": "Intermittent",
+          "r": "PLC Link Issue"
+        }
+      }
+    },
+    {
+      "sr": 61,
+      "name": "QUETTA INDUSTRIAL",
+      "site": "NGC",
+      "rtuType": "Other",
+      "location": "Quetta",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Not Reporting",
+          "l": "Intermittent",
+          "r": "PLC Link Issue"
+        }
+      }
+    },
+    {
+      "sr": 62,
+      "name": "Chakdara 220kV",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Not Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 63,
+      "name": "Okara New",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Faisalabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 64,
+      "name": "NTDC KARACHI INT.",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 65,
+      "name": "Dharki",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 66,
+      "name": "KHUZDAR",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Quetta",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 67,
+      "name": "T.T Singh",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Faisalabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 68,
+      "name": "Loralai",
+      "site": "NGC",
+      "rtuType": "",
+      "location": "Quetta",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 69,
+      "name": "Appolo Solar",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 70,
+      "name": "Attock Gen Limited",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 71,
+      "name": "Balloki Power",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 72,
+      "name": "Best Green Solar",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 73,
+      "name": "Bhikki Power LNG",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 74,
+      "name": "China Hub Power (CPHG)",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Quetta",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 75,
+      "name": "Crest Solar",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 76,
+      "name": "Engro Thar Coal",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 77,
+      "name": "FAUJI KABIRWALA",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 78,
+      "name": "FFC Wind",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 79,
+      "name": "GHAZI BAROTHA",
+      "site": "WAPDA",
+      "rtuType": "",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 80,
+      "name": "Gul Ahmad Wind",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 81,
+      "name": "Hamza Sugar Mills",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 82,
+      "name": "H. B Shah",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 83,
+      "name": "Hawa Wind",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 84,
+      "name": "Hubco Narowal",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 85,
+      "name": "Dawood Wind",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 86,
+      "name": "JDW Unit-II",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 87,
+      "name": "JDW Unit-III",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 88,
+      "name": "Kohinoor Energy / KEL",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Not Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 89,
+      "name": "Thall Ind. Layyah (Sugar Mill)",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 90,
+      "name": "Liberty",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 91,
+      "name": "MANGLA",
+      "site": "WAPDA",
+      "rtuType": "",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 92,
+      "name": "MUZAFFAR GARH. PH1",
+      "site": "GENCO",
+      "rtuType": "ABB",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 93,
+      "name": "MUZAFFAR GARH. PH2",
+      "site": "GENCO",
+      "rtuType": "Siemens",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 94,
+      "name": "Neelum Jhelum (NJHP)",
+      "site": "WAPDA",
+      "rtuType": "Selta",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 95,
+      "name": "Orient",
+      "site": "IPP",
+      "rtuType": "MiCOM",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 96,
+      "name": "Punjab Thermal Power (PTPL)",
+      "site": "IPP",
+      "rtuType": "SAS",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 97,
+      "name": "Quaid Azam Solar",
+      "site": "IPP",
+      "rtuType": "Gateway",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 98,
+      "name": "Rahim Yar Khan Mills",
+      "site": "IPP",
+      "rtuType": "DCS",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 99,
+      "name": "ROUSCH",
+      "site": "IPP",
+      "rtuType": "Other",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 100,
+      "name": "Sachal Wind",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 101,
+      "name": "Saphire Wind",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 102,
+      "name": "Saphire TPS",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 103,
+      "name": "Tapal Wind (ACT wind)",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 104,
+      "name": "UCH-I",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Quetta",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 105,
+      "name": "UCH-II",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Quetta",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 106,
+      "name": "United Wind Power",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 107,
+      "name": "Zorlu Wind",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 108,
+      "name": "Halmore",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 109,
+      "name": "Port Qasim",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 110,
+      "name": "Lucky Electric Power Co.",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 111,
+      "name": "Thar Energy Ltd. (TEL)",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 112,
+      "name": "Thal Nova",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 113,
+      "name": "Shanghai Electric",
+      "site": "IPP",
+      "rtuType": "ABB",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 114,
+      "name": "New Bong Escape HPS",
+      "site": "IPP",
+      "rtuType": "Siemens",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 115,
+      "name": "Gulpur Hydro PP",
+      "site": "IPP",
+      "rtuType": "Selta",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 116,
+      "name": "Karot HPP",
+      "site": "IPP",
+      "rtuType": "MiCOM",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 117,
+      "name": "TGS Wind",
+      "site": "IPP",
+      "rtuType": "SAS",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 118,
+      "name": "Gul Ahmad Wind-II",
+      "site": "IPP",
+      "rtuType": "Gateway",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 119,
+      "name": "Nasda Green Wind",
+      "site": "IPP",
+      "rtuType": "DCS",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 120,
+      "name": "Indus Wind",
+      "site": "IPP",
+      "rtuType": "Other",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 121,
+      "name": "Lake Side Wind",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 122,
+      "name": "Artistic Wind",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 123,
+      "name": "Zhenfa Pakistan New Energy (Solar)",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 124,
+      "name": "Sahiwal Coal",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 125,
+      "name": "Nishat Power",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Not Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 126,
+      "name": "Tarbela T-4",
+      "site": "WAPDA",
+      "rtuType": "",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 127,
+      "name": "Patrind Power",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Intermittent",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 128,
+      "name": "WARSAK",
+      "site": "WAPDA",
+      "rtuType": "",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 129,
+      "name": "Tenega Generasi Wind (TGL)",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 130,
+      "name": "FWEL-I Wind",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 131,
+      "name": "Sukki Kinari Hydro Power (SK)",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 132,
+      "name": "Liberty Wind-I",
+      "site": "IPP",
+      "rtuType": "ABB",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 133,
+      "name": "Engro Power Dharki (Qadirpur)",
+      "site": "IPP",
+      "rtuType": "Siemens",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 134,
+      "name": "Master Wind",
+      "site": "IPP",
+      "rtuType": "Selta",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Not Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 135,
+      "name": "TGF Wind",
+      "site": "IPP",
+      "rtuType": "MiCOM",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 136,
+      "name": "Foundation Dharki",
+      "site": "IPP",
+      "rtuType": "SAS",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 137,
+      "name": "Yunus Wind",
+      "site": "IPP",
+      "rtuType": "Gateway",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 138,
+      "name": "Fatima Energy",
+      "site": "IPP",
+      "rtuType": "DCS",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 139,
+      "name": "Chashnupp I-II",
+      "site": "IPP",
+      "rtuType": "Other",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 140,
+      "name": "Chashnupp III-IV",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 141,
+      "name": "Metro Wind",
+      "site": "IPP",
+      "rtuType": "ABB",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 142,
+      "name": "Nishat Chunian",
+      "site": "IPP",
+      "rtuType": "Siemens",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 143,
+      "name": "LIBERTY Power",
+      "site": "IPP",
+      "rtuType": "Selta",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 144,
+      "name": "CHASHMA HYDRO",
+      "site": "WAPDA",
+      "rtuType": "MiCOM",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Not Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 145,
+      "name": "Allai Khwar",
+      "site": "WAPDA",
+      "rtuType": "SAS",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Pending",
+          "l": "-",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 146,
+      "name": "Chiniot Power (Sugar Mill)",
+      "site": "IPP",
+      "rtuType": "Gateway",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 147,
+      "name": "Dubair Khwar",
+      "site": "WAPDA",
+      "rtuType": "DCS",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 148,
+      "name": "Golan Gol",
+      "site": "WAPDA",
+      "rtuType": "Other",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 149,
+      "name": "Guddu-747",
+      "site": "GENCO",
+      "rtuType": "",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Not Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 150,
+      "name": "Guddu-747",
+      "site": "WAPDA",
+      "rtuType": "Siemens",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 151,
+      "name": "K-2 / K-3",
+      "site": "IPP",
+      "rtuType": "Selta",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 152,
+      "name": "KAPCO",
+      "site": "IPP",
+      "rtuType": "MiCOM",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 153,
+      "name": "Khan Khwar",
+      "site": "WAPDA",
+      "rtuType": "SAS",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 154,
+      "name": "Lahore C/S (HVDC)",
+      "site": "HVDC",
+      "rtuType": "Gateway",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 155,
+      "name": "Zephyr Wind",
+      "site": "IPP",
+      "rtuType": "DCS",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 156,
+      "name": "Malakand-III",
+      "site": "IPP",
+      "rtuType": "Other",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 157,
+      "name": "Matiari C/S (HVDC)",
+      "site": "HVDC",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 158,
+      "name": "Nandipur Thermal",
+      "site": "IPP",
+      "rtuType": "ABB",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 159,
+      "name": "FWEL-II Wind",
+      "site": "IPP",
+      "rtuType": "Siemens",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 160,
+      "name": "Saif Power",
+      "site": "IPP",
+      "rtuType": "Selta",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 161,
+      "name": "AES LALPIR + PAKGEN",
+      "site": "IPP",
+      "rtuType": "MiCOM",
+      "location": "Multan",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 162,
+      "name": "Atlas Power",
+      "site": "IPP",
+      "rtuType": "SAS",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 163,
+      "name": "GTPS/SPS FAISALABAD",
+      "site": "IPP",
+      "rtuType": "Gateway",
+      "location": "Faisalabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 164,
+      "name": "HABIBULLAH COASTAL",
+      "site": "IPP",
+      "rtuType": "DCS",
+      "location": "Quetta",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 165,
+      "name": "HUBCO C-264",
+      "site": "IPP",
+      "rtuType": "Other",
+      "location": "Quetta",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 166,
+      "name": "LAKHRA",
+      "site": "IPP",
+      "rtuType": "",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 167,
+      "name": "SABA",
+      "site": "IPP",
+      "rtuType": "ABB",
+      "location": "Lahore",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 168,
+      "name": "Gharo",
+      "site": "NGC",
+      "rtuType": "Siemens",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Pending",
+          "l": "-",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 169,
+      "name": "Maira",
+      "site": "NGC",
+      "rtuType": "Selta",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Pending",
+          "l": "-",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 170,
+      "name": "Mirpur Khas",
+      "site": "NGC",
+      "rtuType": "MiCOM",
+      "location": "Hyderabad",
+      "region": "South",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Pending",
+          "l": "-",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 171,
+      "name": "Mustung",
+      "site": "NGC",
+      "rtuType": "SAS",
+      "location": "Quetta",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Pending",
+          "l": "-",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 172,
+      "name": "Nowshehra 500",
+      "site": "NGC",
+      "rtuType": "Gateway",
+      "location": "Islamabad",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Pending",
+          "l": "-",
+          "r": ""
+        }
+      }
+    },
+    {
+      "sr": 173,
+      "name": "Zhob",
+      "site": "NGC",
+      "rtuType": "DCS",
+      "location": "Quetta",
+      "region": "North",
+      "logs": {
+        "2026-09-13": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-14": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-15": {
+          "s": "Reporting",
+          "l": "Normal",
+          "r": ""
+        },
+        "2026-09-16": {
+          "s": "Pending",
+          "l": "-",
+          "r": ""
+        }
+      }
+    }
+  ],
+  "dates": [
+    "2026-09-13",
+    "2026-09-14",
+    "2026-09-15",
+    "2026-09-16"
+  ],
+  "updatedAt": "2026-09-17T17:49:23.004Z",
+  "updatedBy": "Administrator"
+}
