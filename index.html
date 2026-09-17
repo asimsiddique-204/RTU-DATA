@@ -585,11 +585,9 @@ tbody tr.clickable{cursor:pointer;}
 @media(max-width:900px){.pakistan-art-frame{height:250px !important;min-height:250px !important}.login-network-art{min-height:250px !important}.login-creator{margin-top:14px !important;}}
 @media(max-width:600px){.pakistan-art-frame{height:220px !important;min-height:220px !important}.login-network-art{min-height:220px !important}.login-creator{padding:10px 12px !important}.login-creator strong{font-size:13px !important}.login-creator .dev-meta{font-size:9.5px !important;}}
 
-/* Center the Print Summary control in the dashboard top bar without changing the right-side controls. */
-.topbar{position:sticky;}
-.topbar-center-print{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;}
-.topbar-center-print .btn{white-space:nowrap;}
-@media(max-width:1100px){.topbar-center-print{position:static;transform:none;order:3;width:100%;display:flex;justify-content:center;margin-top:2px;}.topbar{position:sticky;}}
+/* Print Summary now sits inline in .topbar-controls (a normal flex child) instead of being
+   absolutely centered on the topbar — the old absolute-centering approach overlapped other
+   controls once more buttons (Manage Users, account status) were added to the topbar. */
 
 /* NGC Analog & Indication Quality page */
 .quality-page{display:none;}
@@ -796,12 +794,11 @@ tbody tr.clickable{cursor:pointer;}
     </div>
     <div class="updated-badge" id="dataUpdatedBadge"></div>
   </div>
-  <div class="topbar-center-print">    <button class="btn" id="exportMenuBtn" onclick="openPrintSummaryModal('all')" title="Print Summary">
+  <div class="topbar-controls">
+    <button class="btn" id="exportMenuBtn" onclick="openPrintSummaryModal('all')" title="Print Summary">
       <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6v-8z"/></svg>
       Print Summary
     </button>
-  </div>
-  <div class="topbar-controls">
     <span id="saveIndicator" style="font-size:11px;color:var(--text-mute);font-family:var(--font-mono);opacity:0;transition:opacity .4s ease;white-space:nowrap;">Saved</span>
     <div class="field-inline">
       <label>Date</label>
