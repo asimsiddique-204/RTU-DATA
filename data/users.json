@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "name": "Asim Siddique",
+      "username": "admin",
+      "password": "Changeme_123456",
+      "role": "administrator"
+    },
+    {
+      "name": "Control Room Manager",
+      "username": "manager",
+      "password": "manager",
+      "role": "manager"
+    },
+    {
+      "name": "NGC Telecom Viewer",
+      "username": "viewer",
+      "password": "12345",
+      "role": "user"
+    }
+  ],
+  "updatedAt": "2026-09-17T17:55:04.674Z",
+  "updatedBy": "Administrator"
+}
