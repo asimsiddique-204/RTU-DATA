@@ -13,12 +13,12 @@
       "role": "manager"
     },
     {
-      "name": "NGC Telecom Viewer",
-      "username": "viewer",
+      "name": "NGC Employee Viewer",
+      "username": "User",
       "password": "12345",
       "role": "user"
     }
   ],
-  "updatedAt": "2026-09-17T17:55:04.674Z",
-  "updatedBy": "Administrator"
+  "updatedAt": "2026-09-17T18:04:31.135Z",
+  "updatedBy": "Asim Siddique"
 }
